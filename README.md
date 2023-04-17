@@ -2,7 +2,7 @@
 
 ## 📗 Table of Contents <a name="readme-top"></a>
 
-- [📖 Random User API React Application](#about-project)
+- [📖 Space Traveler's Hub](#about-project)
   - [Project Objectives](#project-objectives)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
@@ -22,45 +22,151 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 Random User API React Application <a name="about-project"></a>
-This is a React application that uses the Random User API to fetch and display user data. The application is built with Redux Toolkit and react-redux.
+# 📖 Space Traveler's Hub <a name="about-project"></a>
+
+This is a web application that allows users to view information about rockets, missions, and dragons from SpaceX. Users can join missions and reserve rockets and dragons.
 
 ## Project Objectives <a name="project-objectives"></a>
-The objective of this project is to create a React application that fetches and displays user data using the Random User API. The application will use Redux Toolkit and react-redux to manage the state of the application.
 
-## 🛠 Built With <a name="built-with"></a>	
+The objectives of this project are:
+- [ ] Create a web application using React and Redux.
+- [ ] Fetch data from SpaceX API endpoints and store them in Redux store.
+- [ ] Render UI components to display the data.
+- [ ] Allow users to reserve rockets and dragons, and join missions.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🛠 Built With <a name="built-with"></a>
+
 ### Tech Stack <a name="tech-stack"></a>
-- [React](https://reactjs.org/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
-- [react-redux](https://react-redux.js.org/)
+
+- [react](https://react.dev/)
+- [npm](https://www.npmjs.com/)
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com)
+- [Stylelint](https://stylelint.io/)
+- [ESLint](https://eslint.org/)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [VSCode](https://code.visualstudio.com/)
+- [react router](https://reactrouter.com/)
+- [react redux](https://react-redux.js.org/)
+- [redux-toolkit](https://redux-toolkit.js.org/)
+- [react icons](https://react-icons.github.io/react-icons/)
 
 ### Key Features <a name="key-features"></a>
-- Fetch and display user data using the Random User API
-- Manage state with Redux Toolkit and react-redux
 
-### 🚀 Live Demo <a name="live-demo"></a>	
-A live demo of the application can be found here.
+- [ ] View rockets, missions, and dragons information.
+- [ ] Reserve rockets and dragons.
+- [ ] Join missions.
+- [ ] View user profile.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+> [Live Demo Link](https://edgardsoza.github.io/space-traveler-hub/)
+
+<p align="center">
+  <img width="1200" src="#">
+</P>
+
+<p align="center">
+  <img width="600" src="#">
+</P>
+
+<p align="center">
+  <img width="300" src="#">
+</P>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
+
 ### Prerequisites <a name="prerequisites"></a>
-- Node.js
+
+- [Optional] Install git bash to your machine to enable you to clone this repo.
+- install Visual Studio to be able to host a local live version.
+- Install a browser to view the local live version.
+
+To get a local copy up and running follow these simple example steps.
 ### Setup <a name="setup"></a>
-- Clone the repository
-- Navigate to the project directory in the terminal
-- Install dependencies with npm install
+
+Clone this repository to your desired folder:
+
+```sh
+  cd your-desired-folder
+  git clone https://github.com/edgardsoza/space-traveler-hub.git
+  open the repo folder `bookstore-cms`
+```
+
 ### Install <a name="install"></a>
-To install the application, run npm install in the project directory.
+
+Install this project dependencies with:
+
+```sh
+  npm install
+```
 
 ### Usage <a name="usage"></a>
-To start the application, run npm start in the project directory.
+
+To run the project, execute the following command:
+
+```sh
+  npm run start
+```
+
+Runs the app in the development mode.\
+Open [http://localhost:3000/space-traveler-hub](http://localhost:3000/space-traveler-hub) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
 ### Run tests <a name="run-tests"></a>
-To run tests, run npm test in the project directory.
+
+To run tests to check the lint errors, run the following command:
+
+- To check for CSS lint errors, run the following command:
+
+```sh
+  npm run stylelint
+```
+
+- To check for JS lint errors, run the following command:
+
+```sh
+  npm run eslinter
+```
+
+To run unit tests, run the following command:
+
+```sh
+  npm run test
+```
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### Deployment <a name="deployment"></a>
-To deploy the application, run npm run build in the project directory. The build files will be located in the build directory.
 
-## 👥 Authors <a name="authors"></a>
+You can deploy this project to github pages by running the following command:
+
+```sh
+  npm run deploy
+
+```
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+and it is automatically deployed to the github page.
+
+See the section about [github page deployment](https://github.com/gitname/react-gh-pages) for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Authors <a name="authors"></a>
+
 👤 **Edgard Soza**
 
 - [GitHub](https://github.com/edgardsoza)
@@ -74,18 +180,36 @@ To deploy the application, run npm run build in the project directory. The build
 - [LinkedIn](https://www.linkedin.com/in/fmanimashaun/)
 - [Website](https://fmanimashaun.com)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🔭 Future Features <a name="future-features"></a>
-Additional user data display options
-User search functionality
-User sorting functionality
+
+- [ ] Implement search functionality.
+- [ ] Add more rockets, missions, and dragons data.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🤝 Contributing <a name="contributing"></a>
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ⭐️ Show your support <a name="support"></a>
-If you found this project helpful or useful, please consider giving it a star on GitHub!
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏 Acknowledgements <a name="acknowledgements"></a>
-This project was created using the Random User API.
+
+- [Microverse](https://www.microverse.org/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
-This project is licensed under the MIT License.
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
