@@ -1,17 +1,19 @@
 import React from 'react';
-import 'assets/scss/style.scss';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
+import 'assets/scss/styles.scss';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
+import store from 'redux/store';
 import App from './App';
 
-const container = document.getElementById('root');
-const root = createRoot(container);
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
+    <Router basename="/space-traveler-hub">
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Router>
+  </React.StrictMode>,
 );
