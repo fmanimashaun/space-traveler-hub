@@ -6,11 +6,4 @@
   src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format('TrueType');
 }
 
-/* Roboto Slab font */
-@font-face {
-  font-family: 'Roboto Slab';
-  src: url("../fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf") format('TrueType');
-}
-
 $primary-ff:'Montserrat', sans-serif;
-$secondary-ff: 'Roboto Slab', serif;
