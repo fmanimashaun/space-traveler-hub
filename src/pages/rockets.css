@@ -1,0 +1,17 @@
+.rocket-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 5rem;
+}
+
+.rocket-image {
+  width: 15rem;
+  height: 80%;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}

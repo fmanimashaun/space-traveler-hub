@@ -27,7 +27,7 @@ const rocketsSlice = createSlice({
         status: 'succeeded',
         rockets: action.payload.map((rocket) => ({
           id: rocket.id,
-          rocket_name: rocket.rocket_name,
+          name: rocket.name,
           description: rocket.description,
           flickr_images: rocket.flickr_images,
         })),
