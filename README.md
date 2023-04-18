@@ -40,18 +40,18 @@ The objectives of this project are:
 
 ### Tech Stack <a name="tech-stack"></a>
 
-- [react](https://react.dev/)
-- [npm](https://www.npmjs.com/)
-- [Git](https://git-scm.com/)
-- [GitHub](https://github.com)
-- [Stylelint](https://stylelint.io/)
-- [ESLint](https://eslint.org/)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [VSCode](https://code.visualstudio.com/)
-- [react router](https://reactrouter.com/)
-- [react redux](https://react-redux.js.org/)
-- [redux-toolkit](https://redux-toolkit.js.org/)
-- [react icons](https://react-icons.github.io/react-icons/)
+- [React](https://reactjs.org/)
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [React Redux](https://react-redux.js.org/)
+- [Redux-toolkit](https://redux-toolkit.js.org/)
+- [Axios](https://axios-http.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [PropTypes](https://www.npmjs.com/package/prop-types)
+- [Sass](https://sass-lang.com/)
+- [Redux Logger](https://github.com/LogRocket/redux-logger)
 
 ### Key Features <a name="key-features"></a>
 
