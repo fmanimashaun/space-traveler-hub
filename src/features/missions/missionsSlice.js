@@ -41,27 +41,28 @@ const missionsSlice = createSlice({
       }
     },
     leaveMission: (state, action) => {
-      const mission = state.missionList.find(
+      const missionIndex = state.missionList.findIndex(
         (m) => m.mission_id === action.payload,
       );
-      if (mission) {
-        const index = action.payload;
-        const updatedMissions = [
-          ...state.missionList.slice(0, index),
-          { ...mission, reserved: false },
-          ...state.missionList.slice(index + 1),
+      if (missionIndex >= 0) {
+        const updatedMission = {
+          ...state.missionList[missionIndex],
+          reserved: false,
+        };
+        const updatedMissionList = [
+          ...state.missionList.slice(0, missionIndex),
+          updatedMission,
+          ...state.missionList.slice(missionIndex + 1),
         ];
         const updatedReservedMissions = state.reservedMissions.filter(
           (m) => m.mission_id !== action.payload,
         );
-
         return {
           ...state,
-          missionList: updatedMissions,
+          missionList: updatedMissionList,
           reservedMissions: updatedReservedMissions,
         };
       }
-
       return state;
     },
   },
