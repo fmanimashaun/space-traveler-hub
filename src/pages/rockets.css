@@ -17,9 +17,15 @@
   gap: 2rem;
 }
 
-.reserve-rocket {
+.reserve-rocketcancelled {
   padding: 0.5rem;
   border-radius: 0.5rem;
   background-color: rgb(42, 71, 238);
   color: #fff;
+}
+
+.reserve-rocketreserved {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: gray;
 }

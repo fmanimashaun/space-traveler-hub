@@ -18,12 +18,12 @@ const rocketsSlice = createSlice({
   },
   reducers: {
     reserveRocketAction: (state, action) => {
-      const id = action.payload;
+      const id = action.payload.id.toString();
       const updatedRockets = state.rockets.map((rocket) => {
         if (rocket.id === id) {
           return {
             ...rocket,
-            reserved: true,
+            reserved: !rocket.reserved,
           };
         }
         return rocket;
@@ -45,6 +45,7 @@ const rocketsSlice = createSlice({
           name: rocket.name,
           description: rocket.description,
           flickr_images: rocket.flickr_images,
+          reserved: false,
         })),
       }))
       .addCase(fetchRockets.rejected, (state, action) => ({ ...state, status: 'failed', error: action.error.message }));

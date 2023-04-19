@@ -32,7 +32,15 @@ const Rockets = () => {
             <div className="information-container">
               <h2>{rocket.name}</h2>
               <p>{rocket.description}</p>
-              <button aria-label="reserve-rocket" type="button" value="Reserve Rocket" className="reserve-rocket" onClick={() => dispatch(reserveRocketAction(rocket.id))}>Reserve Rocket</button>
+              <button
+                aria-label="reserve-rocket"
+                type="button"
+                value="Reserve Rocket"
+                className={`reserve-rocket${rocket.reserved ? 'reserved' : 'cancelled'}`}
+                onClick={() => dispatch(reserveRocketAction({ id: rocket.id }))}
+              >
+                {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+              </button>
             </div>
           </div>
         ))}
