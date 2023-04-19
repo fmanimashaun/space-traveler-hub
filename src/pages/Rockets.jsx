@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRockets } from './RocketSlice';
+import { fetchRockets, reserveRocketAction } from './RocketSlice';
 import './rockets.css';
 
 const Rockets = () => {
@@ -32,6 +32,7 @@ const Rockets = () => {
             <div className="information-container">
               <h2>{rocket.name}</h2>
               <p>{rocket.description}</p>
+              <button aria-label="reserve-rocket" type="button" value="Reserve Rocket" className="reserve-rocket" onClick={() => dispatch(reserveRocketAction(rocket.id))}>Reserve Rocket</button>
             </div>
           </div>
         ))}

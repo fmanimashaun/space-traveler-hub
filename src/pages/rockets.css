@@ -3,15 +3,23 @@
   flex-direction: column;
   gap: 2rem;
   padding-top: 5rem;
+  border-top: 1px solid gray;
 }
 
 .rocket-image {
-  width: 15rem;
-  height: 80%;
+  width: 21rem;
+  height: 85%;
 }
 
 .card-item {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+}
+
+.reserve-rocket {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgb(42, 71, 238);
+  color: #fff;
 }
