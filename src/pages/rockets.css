@@ -31,6 +31,7 @@
 }
 
 .badge {
+  margin-right: 0.5rem;
   background-color: rgb(6, 109, 109);
   color: #fff;
 }

@@ -31,8 +31,10 @@ const Rockets = () => {
             </div>
             <div className="information-container">
               <h2>{rocket.name}</h2>
-              {rocket.reserved && <div className="badge">Reserved</div>}
-              <p>{rocket.description}</p>
+              <p>
+                {rocket.reserved && <span className="badge">Reserved</span>}
+                {rocket.description}
+              </p>
               <button
                 aria-label="reserve-rocket"
                 type="button"
