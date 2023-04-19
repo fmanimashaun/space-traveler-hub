@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissions } from 'features/missions/missionsSlice';
+import { fetchMissions, joinMission, leaveMission } from 'features/missions/missionsSlice';
 import LoadingSpinner from 'components/LoadingSpinner';
 import Styles from 'assets/scss/missions.module.scss';
 import Table from 'react-bootstrap/Table';
@@ -16,6 +16,14 @@ const Missions = () => {
   useEffect(() => {
     dispatch(fetchMissions());
   }, [dispatch]);
+
+  const handleJoinMission = (missionId) => {
+    dispatch(joinMission(missionId));
+  };
+
+  const handleLeaveMission = (missionId) => {
+    dispatch(leaveMission(missionId));
+  };
 
   return (
     <>
@@ -56,6 +64,7 @@ const Missions = () => {
                         <Button
                           variant="outline-danger"
                           className="text-nowrap"
+                          onClick={() => handleLeaveMission(mission.mission_id)}
                         >
                           LEAVE MISSION
                         </Button>
@@ -63,6 +72,7 @@ const Missions = () => {
                         <Button
                           variant="outline-success"
                           className="text-nowrap"
+                          onClick={() => handleJoinMission(mission.mission_id)}
                         >
                           JOIN MISSION
                         </Button>
