@@ -1,0 +1,29 @@
+.missions {
+  width: 100%;
+  @media only screen and (max-width: 767px) {
+      tbody,
+      tr,
+      td {
+        display: block;
+      }
+
+      thead tr {
+        display: none;
+      }
+
+      td {
+        position: relative;
+        padding-left: 35%;
+      }
+      td:before {
+        content: attr(data-title);
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        width: 25%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+    }
+}
