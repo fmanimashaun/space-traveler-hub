@@ -31,6 +31,14 @@ const Missions = () => {
     dispatch(leaveMission(missionId));
   };
 
+  const handleJoinMission = (missionId) => {
+    dispatch(joinMission(missionId));
+  };
+
+  const handleLeaveMission = (missionId) => {
+    dispatch(leaveMission(missionId));
+  };
+
   return (
     <>
       {isLoading && (
@@ -104,6 +112,7 @@ const Missions = () => {
                         <Button
                           variant="outline-danger"
                           className="text-nowrap"
+                          onClick={() => handleLeaveMission(mission.mission_id)}
                         >
                           LEAVE MISSION
                         </Button>
@@ -111,6 +120,7 @@ const Missions = () => {
                         <Button
                           variant="outline-success"
                           className="text-nowrap"
+                          onClick={() => handleJoinMission(mission.mission_id)}
                         >
                           JOIN MISSION
                         </Button>
