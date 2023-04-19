@@ -26,4 +26,13 @@
         font-weight: bold;
       }
     }
+
+    &__loading {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
 }
