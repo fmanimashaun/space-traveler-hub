@@ -84,9 +84,48 @@ const Missions = () => {
                     )}
                   </td>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
+              </thead>
+              <tbody>
+                {missionList.map((mission) => (
+                  <tr key={mission.mission_id}>
+                    <td data-title="Mission">
+                      <strong>{mission.mission_name}</strong>
+                    </td>
+                    <td data-title="Description">{mission.description}</td>
+                    <td className="align-middle" data-title="Status">
+                      {mission.reserved ? (
+                        <Badge bg="success">Active Member</Badge>
+                      ) : (
+                        <Badge bg="secondary">NOT A MEMBER</Badge>
+                      )}
+                    </td>
+                    <td className="align-middle">
+                      {mission.reserved ? (
+                        <Button
+                          variant="outline-danger"
+                          className="text-nowrap"
+                        >
+                          LEAVE MISSION
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline-success"
+                          className="text-nowrap"
+                        >
+                          JOIN MISSION
+                        </Button>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          ) : (
+            <div className={Styles.missions__loading}>
+              <LoadingSpinner />
+              <p>Awaiting mission data</p>
+            </div>
+          )}
         </div>
       )}
     </>
