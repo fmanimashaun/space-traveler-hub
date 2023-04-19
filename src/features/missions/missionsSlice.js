@@ -34,7 +34,6 @@ const missionsSlice = createSlice({
       const mission = state.missionList.find(
         (m) => m.mission_id === action.payload,
       );
-
       if (mission) {
         mission.reserved = true;
         state.reservedMissions.push(mission);
