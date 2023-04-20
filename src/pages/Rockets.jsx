@@ -1,17 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRockets, reserveRocketAction } from './RocketSlice';
+import { reserveRocketAction } from './RocketSlice';
 import './rockets.css';
 
 const Rockets = () => {
   const dispatch = useDispatch();
-  const rockets = useSelector((state) => state.rockets.rockets);
-  const status = useSelector((state) => state.rockets.status);
-  const error = useSelector((state) => state.rockets.error);
-
-  useEffect(() => {
-    dispatch(fetchRockets());
-  }, [dispatch]);
+  const { rockets, status, error } = useSelector((state) => state.rockets);
 
   if (status === 'loading') {
     return <div>Loading...</div>;
