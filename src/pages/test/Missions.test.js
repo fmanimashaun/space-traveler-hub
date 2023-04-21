@@ -4,12 +4,6 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import Missions from 'pages/Missions';
 
-jest.mock('features/missions/missionsSlice', () => ({
-  fetchMissions: jest.fn(),
-  joinMission: jest.fn(),
-  leaveMission: jest.fn(),
-}));
-
 const mockStore = configureStore([]);
 
 describe('Missions component', () => {
