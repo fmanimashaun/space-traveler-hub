@@ -1,15 +1,25 @@
-// import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import LoadingSpinner from 'components/LoadingSpinner';
 import Styles from 'assets/scss/rockets.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { reserveRocketAction } from 'features/rockets/rocketsSlice';
+import {
+  reserveRocketAction,
+  fetchRockets,
+} from 'features/rockets/rocketsSlice';
 import './rockets.css';
 
 const Rockets = () => {
-  const dispatch = useDispatch();
   const { rockets, status, error } = useSelector((state) => state.rockets);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (rockets.length === 0 && status === 'idle') {
+      dispatch(fetchRockets());
+    }
+  }, [dispatch, status, rockets]);
 
   return (
     <>
