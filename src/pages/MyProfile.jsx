@@ -16,16 +16,12 @@ const MyProfile = () => {
             <Reserved
               title="Rockets"
               arr={reservedRockets}
-              idKey="id"
-              nameKey="name"
             />
           </Col>
           <Col lg={6}>
             <Reserved
               title="Missions"
               arr={reservedMissions}
-              idKey="mission_id"
-              nameKey="mission_name"
             />
           </Col>
         </Row>
