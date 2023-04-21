@@ -1,6 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { reserveRocketAction } from './RocketSlice';
+import {
+  fetchRockets,
+  reserveRocketAction,
+} from '../features/rockets/rocketsSlice';
 import './rockets.css';
 
 const Rockets = () => {
@@ -21,22 +24,23 @@ const Rockets = () => {
         {rockets.map((rocket) => (
           <div key={rocket.id} className="card-item">
             <div className="image-container">
-              <img className="rocket-image" src={rocket.flickr_images} alt={rocket.rocket_name} />
+              <img
+                className="rocket-image"
+                src={rocket.flickr_images}
+                alt={rocket.rocket_name}
+              />
             </div>
             <div className="information-container">
               <h2>{rocket.name}</h2>
-              <p>
-                {rocket.reserved && <span className="badge">Reserved</span>}
-                {rocket.description}
-              </p>
+              <p>{rocket.description}</p>
               <button
                 aria-label="reserve-rocket"
                 type="button"
                 value="Reserve Rocket"
-                className={`reserve-rocket${rocket.reserved ? 'reserved' : 'cancelled'}`}
-                onClick={() => dispatch(reserveRocketAction({ id: rocket.id }))}
+                className="reserve-rocket"
+                onClick={() => dispatch(reserveRocketAction(rocket.id))}
               >
-                {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+                Reserve Rocket
               </button>
             </div>
           </div>
