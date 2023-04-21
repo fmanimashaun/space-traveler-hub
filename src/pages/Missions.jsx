@@ -52,9 +52,9 @@ const Missions = () => {
             </thead>
             <tbody>
               {missionList.map((mission) => (
-                <tr key={mission.mission_id}>
+                <tr key={mission.id}>
                   <td data-title="Mission">
-                    <strong>{mission.mission_name}</strong>
+                    <strong>{mission.name}</strong>
                   </td>
                   <td data-title="Description">{mission.description}</td>
                   <td className="align-middle" data-title="Status">
@@ -69,7 +69,7 @@ const Missions = () => {
                       <Button
                         variant="outline-danger"
                         className="text-nowrap"
-                        onClick={() => handleLeaveMission(mission.mission_id)}
+                        onClick={() => handleLeaveMission(mission.id)}
                       >
                         LEAVE MISSION
                       </Button>
@@ -77,7 +77,7 @@ const Missions = () => {
                       <Button
                         variant="outline-success"
                         className="text-nowrap"
-                        onClick={() => handleJoinMission(mission.mission_id)}
+                        onClick={() => handleJoinMission(mission.id)}
                       >
                         JOIN MISSION
                       </Button>
