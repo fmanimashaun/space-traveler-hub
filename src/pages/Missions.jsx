@@ -31,14 +31,6 @@ const Missions = () => {
     dispatch(leaveMission(missionId));
   };
 
-  const handleJoinMission = (missionId) => {
-    dispatch(joinMission(missionId));
-  };
-
-  const handleLeaveMission = (missionId) => {
-    dispatch(leaveMission(missionId));
-  };
-
   return (
     <>
       {isLoading && (
