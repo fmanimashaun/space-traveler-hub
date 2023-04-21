@@ -5,8 +5,6 @@ import Styles from 'assets/scss/reservedTable.module.scss';
 const Reserved = ({
   title,
   arr,
-  idKey,
-  nameKey,
 }) => (
   <div className="flex-fill">
     <h2 className="h2">{`My ${title}`}</h2>
@@ -15,8 +13,8 @@ const Reserved = ({
         <Table className="mb-0">
           <tbody>
             {arr.map((item) => (
-              <tr key={item[idKey]}>
-                <td className="pt-3 pb-4 ps-3 pe-3">{item[nameKey]}</td>
+              <tr key={item.id}>
+                <td className="pt-3 pb-4 ps-3 pe-3">{item.name}</td>
               </tr>
             ))}
           </tbody>
@@ -36,8 +34,6 @@ Reserved.propTypes = {
       name: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  idKey: PropTypes.string.isRequired,
-  nameKey: PropTypes.string.isRequired,
 };
 
 export default Reserved;
