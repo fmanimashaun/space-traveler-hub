@@ -37,7 +37,7 @@ describe('Missions component', () => {
     render(
       <Provider store={store}>
         <Missions />
-      </Provider>
+      </Provider>,
     );
 
     const loadingText = screen.getByText('Loading Missions...');
@@ -57,7 +57,7 @@ describe('Missions component', () => {
     render(
       <Provider store={store}>
         <Missions />
-      </Provider>
+      </Provider>,
     );
 
     const errorText = screen.getByText('An error occurred');
@@ -100,7 +100,7 @@ describe('Missions component', () => {
     render(
       <Provider store={store}>
         <Missions />
-      </Provider>
+      </Provider>,
     );
 
     const mission1Name = screen.getByText('FalconSat');
