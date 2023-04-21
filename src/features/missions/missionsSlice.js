@@ -9,7 +9,14 @@ export const fetchMissions = createAsyncThunk(
     try {
       const response = await axios.get(URL);
       const missions = response.data.map((mission) => ({
-        ...mission,
+        id: mission.mission_id,
+        name: mission.mission_name,
+        manufacturers: mission.manufacturers,
+        payload_ids: mission.payload_ids,
+        wikipedia: mission.wikipedia,
+        website: mission.website,
+        twitter: mission.twitter,
+        description: mission.description,
         reserved: false,
       }));
       return missions;
@@ -32,7 +39,7 @@ const missionsSlice = createSlice({
   reducers: {
     joinMission: (state, action) => {
       const mission = state.missionList.find(
-        (m) => m.mission_id === action.payload,
+        (m) => m.id === action.payload,
       );
       if (mission) {
         mission.reserved = true;
@@ -41,7 +48,7 @@ const missionsSlice = createSlice({
     },
     leaveMission: (state, action) => {
       const missionIndex = state.missionList.findIndex(
-        (m) => m.mission_id === action.payload,
+        (m) => m.id === action.payload,
       );
       if (missionIndex >= 0) {
         const updatedMission = {
@@ -54,7 +61,7 @@ const missionsSlice = createSlice({
           ...state.missionList.slice(missionIndex + 1),
         ];
         const updatedReservedMissions = state.reservedMissions.filter(
-          (m) => m.mission_id !== action.payload,
+          (m) => m.id !== action.payload,
         );
         return {
           ...state,
