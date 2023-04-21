@@ -3,8 +3,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import LOGO from 'assets/images/logo.png';
+import { useDispatch } from 'react-redux';
+import { fetchRockets } from 'pages/RocketSlice';
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRockets());
+  }, [dispatch]);
+
   const navigate = useNavigate();
   const location = useLocation();
 
