@@ -15,7 +15,7 @@ const Header = () => {
     } else if (currentPath === '/missions') {
       document.title = 'Missions | Space Travelers\'s Hub';
     } else if (currentPath === '/my-profile') {
-      document.title = 'My Profile | Space Travelers\'s Hub';
+      document.title = 'My Profiles | Space Travelers\'s Hub';
     }
   }, [location]);
 
