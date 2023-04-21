@@ -3,16 +3,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import LOGO from 'assets/images/logo.png';
-import { useDispatch } from 'react-redux';
-import { fetchRockets } from 'pages/RocketSlice';
 
 const Header = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchRockets());
-  }, [dispatch]);
-
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -23,7 +15,7 @@ const Header = () => {
     } else if (currentPath === '/missions') {
       document.title = 'Missions | Space Travelers\'s Hub';
     } else if (currentPath === '/my-profile') {
-      document.title = 'My Profile | Space Travelers\'s Hub';
+      document.title = 'My Profiles | Space Travelers\'s Hub';
     }
   }, [location]);
 

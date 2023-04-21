@@ -1,47 +1,74 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
+import LoadingSpinner from 'components/LoadingSpinner';
+import Styles from 'assets/scss/rockets.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { reserveRocketAction } from './RocketSlice';
+import {
+  reserveRocketAction,
+  fetchRockets,
+} from 'features/rockets/rocketsSlice';
 import './rockets.css';
 
 const Rockets = () => {
-  const dispatch = useDispatch();
   const { rockets, status, error } = useSelector((state) => state.rockets);
 
-  if (status === 'loading') {
-    return <div>Loading...</div>;
-  }
+  const dispatch = useDispatch();
 
-  if (status === 'failed') {
-    return <div>{error}</div>;
-  }
+  useEffect(() => {
+    if (rockets.length === 0 && status === 'idle') {
+      dispatch(fetchRockets());
+    }
+  }, [dispatch, status, rockets]);
 
   return (
     <>
-      <div className="rocket-cards">
-        {rockets.map((rocket) => (
-          <div key={rocket.id} className="card-item">
-            <div className="image-container">
-              <img className="rocket-image" src={rocket.flickr_images} alt={rocket.rocket_name} />
+      {status === 'loading' && (
+        <div className={Styles.rockets__loading}>
+          <LoadingSpinner />
+          <p>Loading Rockets...</p>
+        </div>
+      )}
+      {status === 'failed' && <p>{error}</p>}
+      {status === 'succeeded' && (
+        <div className="rocket-cards">
+          {rockets.map((rocket) => (
+            <div key={rocket.id} className="card-item">
+              <div className="image-container">
+                <img
+                  className="rocket-image"
+                  src={rocket.flickr_images}
+                  alt={rocket.rocket_name}
+                />
+              </div>
+              <div className="information-container">
+                <h2>{rocket.name}</h2>
+                <p>
+                  {rocket.reserved && <Badge bg="success">Reserved</Badge>}
+                  {rocket.description}
+                </p>
+                {!rocket.reserved ? (
+                  <Button
+                    variant="primary"
+                    type="button"
+                    onClick={() => dispatch(reserveRocketAction(rocket.id))}
+                  >
+                    Reserve Rocket
+                  </Button>
+                ) : (
+                  <Button
+                    variant="outline-secondary"
+                    type="button"
+                    onClick={() => dispatch(reserveRocketAction(rocket.id))}
+                  >
+                    Cancel Reservation
+                  </Button>
+                )}
+              </div>
             </div>
-            <div className="information-container">
-              <h2>{rocket.name}</h2>
-              <p>
-                {rocket.reserved && <span className="badge">Reserved</span>}
-                {rocket.description}
-              </p>
-              <button
-                aria-label="reserve-rocket"
-                type="button"
-                value="Reserve Rocket"
-                className={`reserve-rocket${rocket.reserved ? 'reserved' : 'cancelled'}`}
-                onClick={() => dispatch(reserveRocketAction({ id: rocket.id }))}
-              >
-                {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </>
   );
 };
