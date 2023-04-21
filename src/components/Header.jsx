@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import LOGO from 'assets/images/logo.png';
 import { useDispatch } from 'react-redux';
-import { fetchRockets } from 'pages/RocketSlice';
+import { fetchRockets } from 'features/rockets/rocketsSlice';
 
 const Header = () => {
   const dispatch = useDispatch();
