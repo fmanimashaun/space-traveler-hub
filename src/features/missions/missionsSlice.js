@@ -11,11 +11,6 @@ export const fetchMissions = createAsyncThunk(
       const missions = response.data.map((mission) => ({
         id: mission.mission_id,
         name: mission.mission_name,
-        manufacturers: mission.manufacturers,
-        payload_ids: mission.payload_ids,
-        wikipedia: mission.wikipedia,
-        website: mission.website,
-        twitter: mission.twitter,
         description: mission.description,
         reserved: false,
       }));

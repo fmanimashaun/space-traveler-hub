@@ -44,7 +44,7 @@ const rocketsSlice = createSlice({
           id: rocket.id,
           name: rocket.name,
           description: rocket.description,
-          flickr_images: rocket.flickr_images,
+          flickr_images: rocket.flickr_images[0],
           reserved: false,
         })),
       }))
