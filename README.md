@@ -66,18 +66,6 @@ The objectives of this project are:
 
 > [Live Demo Link](https://edgardsoza.github.io/space-traveler-hub/)
 
-<p align="center">
-  <img width="1200" src="#">
-</P>
-
-<p align="center">
-  <img width="600" src="#">
-</P>
-
-<p align="center">
-  <img width="300" src="#">
-</P>
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
