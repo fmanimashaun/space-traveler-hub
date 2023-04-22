@@ -93,6 +93,10 @@ describe('Missions component', () => {
   });
 
   it('should dispatch joinMission action when Join Mission button is clicked', async () => {
+    const mockJoinMission = jest.fn();
+    const missionId = 'mission2';
+    store.dispatch = mockJoinMission;
+
     render(
       <Provider store={store}>
         <Missions />
@@ -102,19 +106,22 @@ describe('Missions component', () => {
     const joinMissionButton = screen.getByText('JOIN MISSION');
     fireEvent.click(joinMissionButton);
 
-    await waitFor(() =>
-      expect(store.getActions()).toContainEqual({
-        type: 'missions/joinMission/pending',
-        meta: {
-          arg: expect.any(String),
-          requestId: expect.any(String),
-          requestStatus: 'pending',
-        },
-      }),
-    );
+    await waitFor(() => {
+      expect(mockJoinMission).toHaveBeenCalledWith({
+        type: 'missions/joinMission',
+        payload: missionId,
+      });
+    });
   });
 
-  it('should dispatch leaveMission action when Leave Mission button is clicked', async () => {
+
+
+  it('should dispatch leaveMission action when Leave Mission button is clicked', () => {
+    const mockLeaveMission = jest.fn();
+    const missionId = 'mission1';
+
+    store.dispatch = mockLeaveMission;
+
     render(
       <Provider store={store}>
         <Missions />
@@ -124,15 +131,9 @@ describe('Missions component', () => {
     const leaveMissionButton = screen.getByText('LEAVE MISSION');
     fireEvent.click(leaveMissionButton);
 
-    await waitFor(() =>
-      expect(store.getActions()).toContainEqual({
-        type: 'missions/leaveMission/pending',
-        meta: {
-          arg: expect.any(String),
-          requestId: expect.any(String),
-          requestStatus: 'pending',
-        },
-      }),
-    );
+    expect(mockLeaveMission).toHaveBeenCalledWith({
+      type: 'missions/leaveMission',
+      payload: missionId,
+    });
   });
 });

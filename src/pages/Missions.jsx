@@ -18,10 +18,10 @@ const Missions = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (missionList.length === 0 && !isLoading) {
+    if (missionList.length === 0 && !isLoading && !error) {
       dispatch(fetchMissions());
     }
-  }, [dispatch, isLoading, missionList]);
+  }, [dispatch, error, isLoading, missionList]);
 
   const handleJoinMission = (missionId) => {
     dispatch(joinMission(missionId));
@@ -39,7 +39,9 @@ const Missions = () => {
           <p>Loading Missions...</p>
         </div>
       )}
-      {!isLoading && error && <p>{error}</p>}
+      {!isLoading && error && (
+        <p className={Styles.missions__error}>{error}</p>
+      )}
       {!isLoading && !error && (
         <div className={Styles.missions}>
           <Table striped bordered responsive="sm">
