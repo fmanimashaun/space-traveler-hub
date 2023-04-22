@@ -1,5 +1,7 @@
 import React from 'react';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import {
+  render, screen, waitFor, fireEvent,
+} from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import Missions from 'pages/Missions';
@@ -113,8 +115,6 @@ describe('Missions component', () => {
       });
     });
   });
-
-
 
   it('should dispatch leaveMission action when Leave Mission button is clicked', () => {
     const mockLeaveMission = jest.fn();
