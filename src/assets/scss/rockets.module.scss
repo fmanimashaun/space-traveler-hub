@@ -11,7 +11,7 @@
   &__img {
     width: 100%;
     height: auto;
-    
+
     @media (min-width: 768px) {
       flex-basis: 21rem;
       flex-shrink: 0;
@@ -24,6 +24,7 @@
 
   &__title {
     margin-block-start: 1rem;
+
     @media only screen and (min-width: 768px) {
       margin-block-start: 0;
     }
