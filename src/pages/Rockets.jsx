@@ -42,7 +42,9 @@ const Rockets = () => {
                     className={`${Styles.rockets__img} rounded-0`}
                   />
                   <Card.Body className="p-0 d-flex flex-column align-items-start">
-                    <Card.Title as="h2" className={Styles.rockets__title}>{rocket.name}</Card.Title>
+                    <Card.Title as="h2" className={Styles.rockets__title}>
+                      {rocket.name}
+                    </Card.Title>
                     <Card.Text className="mb-auto">
                       {rocket.reserved && <Badge bg="success">Reserved</Badge>}
                       {rocket.description}
@@ -52,6 +54,7 @@ const Rockets = () => {
                         variant="primary"
                         type="button"
                         onClick={() => dispatch(reserveRocketAction(rocket.id))}
+                        className={Styles.rockets__btn}
                       >
                         Reserve Rocket
                       </Button>
@@ -60,6 +63,7 @@ const Rockets = () => {
                         variant="outline-secondary"
                         type="button"
                         onClick={() => dispatch(reserveRocketAction(rocket.id))}
+                        className={Styles.rockets__btn}
                       >
                         Cancel Reservation
                       </Button>

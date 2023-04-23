@@ -9,12 +9,10 @@
   }
 
   &__img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-
     @media (min-width: 768px) {
-      flex-basis: 21rem;
-      flex-shrink: 0;
+      max-width: 21rem;
     }
   }
 
@@ -28,6 +26,11 @@
     @media only screen and (min-width: 768px) {
       margin-block-start: 0;
     }
+  }
+
+  &__btn {
+    margin-block-start: 1.5rem;
+    margin-block-end: 0;
   }
 
   &__loading {
