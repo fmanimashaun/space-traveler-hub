@@ -39,9 +39,7 @@ const Missions = () => {
           <p>Loading Missions...</p>
         </div>
       )}
-      {!isLoading && error && (
-        <p className={Styles.missions__error}>{error}</p>
-      )}
+      {!isLoading && error && <p className={Styles.missions__error}>{error}</p>}
       {!isLoading && !error && (
         <div className={Styles.missions}>
           <Table striped bordered responsive="sm">
@@ -50,6 +48,7 @@ const Missions = () => {
                 <th>Mission</th>
                 <th>Description</th>
                 <th>Status</th>
+                <th>&nbsp;</th>
               </tr>
             </thead>
             <tbody>
