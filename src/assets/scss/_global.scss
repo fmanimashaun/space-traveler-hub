@@ -7,3 +7,16 @@
     min-width: 350px;
   }
 }
+
+.container {
+  min-height: calc(100vh - 217px);
+}
+
+footer {
+  margin-block-start: auto;
+}
+
+.active {
+  color: #0b80ff !important;
+  text-decoration: underline !important;
+}
