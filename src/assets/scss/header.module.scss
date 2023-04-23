@@ -16,14 +16,14 @@
       display: inline-block;
       color: #0b80ff;
 
-      @media only screen and (min-width: 768px) {
+      @media only screen and (min-width: 992px) {
         padding-block: 0;
         line-height: 1;
       }
     }
 
     a:last-child {
-      @media only screen and (min-width: 768px) {
+      @media only screen and (min-width: 992px) {
         border-inline-start: 2px solid #2d3134;
       }
     }
