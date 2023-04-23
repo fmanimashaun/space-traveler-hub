@@ -13,16 +13,10 @@ const MyProfile = () => {
       <Container>
         <Row>
           <Col lg={6}>
-            <Reserved
-              title="Rockets"
-              arr={reservedRockets}
-            />
+            <Reserved title="Rockets" arr={reservedRockets} />
           </Col>
           <Col lg={6}>
-            <Reserved
-              title="Missions"
-              arr={reservedMissions}
-            />
+            <Reserved title="Missions" arr={reservedMissions} />
           </Col>
         </Row>
       </Container>
