@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Container, Card } from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import LoadingSpinner from 'components/LoadingSpinner';
@@ -8,7 +9,6 @@ import {
   reserveRocketAction,
   fetchRockets,
 } from 'features/rockets/rocketsSlice';
-import './rockets.css';
 
 const Rockets = () => {
   const { rockets, status, error } = useSelector((state) => state.rockets);
@@ -23,52 +23,54 @@ const Rockets = () => {
 
   return (
     <>
-      {status === 'loading' && (
-        <div className={Styles.rockets__loading}>
-          <LoadingSpinner />
-          <p>Loading Rockets...</p>
-        </div>
-      )}
-      {status === 'failed' && <p>{error}</p>}
-      {status === 'succeeded' && (
-        <div className="rocket-cards">
-          {rockets.map((rocket) => (
-            <div key={rocket.id} className="card-item">
-              <div className="image-container">
-                <img
-                  className="rocket-image"
-                  src={rocket.flickr_images}
-                  alt={rocket.rocket_name}
-                />
-              </div>
-              <div className="information-container">
-                <h2>{rocket.name}</h2>
-                <p>
-                  {rocket.reserved && <Badge bg="success">Reserved</Badge>}
-                  {rocket.description}
-                </p>
-                {!rocket.reserved ? (
-                  <Button
-                    variant="primary"
-                    type="button"
-                    onClick={() => dispatch(reserveRocketAction(rocket.id))}
-                  >
-                    Reserve Rocket
-                  </Button>
-                ) : (
-                  <Button
-                    variant="outline-secondary"
-                    type="button"
-                    onClick={() => dispatch(reserveRocketAction(rocket.id))}
-                  >
-                    Cancel Reservation
-                  </Button>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+      <Container className={Styles.rockets}>
+        {status === 'loading' && (
+          <div className={Styles.rockets__loading}>
+            <LoadingSpinner />
+            <p>Loading Rockets...</p>
+          </div>
+        )}
+        {status === 'failed' && <p>{error}</p>}
+        {status === 'succeeded' && (
+          <div className={Styles.rockets__list}>
+            {rockets.map((rocket) => (
+              <Card key={rocket.id} className="border-0">
+                <div className={`d-md-flex ${Styles.rockets__card}`}>
+                  <Card.Img
+                    src={rocket.flickr_images}
+                    alt={rocket.rocket_name}
+                    className={`${Styles.rockets__img} rounded-0`}
+                  />
+                  <Card.Body className="p-0 d-flex flex-column align-items-start">
+                    <Card.Title as="h2" className={Styles.rockets__title}>{rocket.name}</Card.Title>
+                    <Card.Text className="mb-auto">
+                      {rocket.reserved && <Badge bg="success">Reserved</Badge>}
+                      {rocket.description}
+                    </Card.Text>
+                    {!rocket.reserved ? (
+                      <Button
+                        variant="primary"
+                        type="button"
+                        onClick={() => dispatch(reserveRocketAction(rocket.id))}
+                      >
+                        Reserve Rocket
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="outline-secondary"
+                        type="button"
+                        onClick={() => dispatch(reserveRocketAction(rocket.id))}
+                      >
+                        Cancel Reservation
+                      </Button>
+                    )}
+                  </Card.Body>
+                </div>
+              </Card>
+            ))}
+          </div>
+        )}
+      </Container>
     </>
   );
 };

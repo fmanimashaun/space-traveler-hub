@@ -1,5 +1,34 @@
 .rockets {
   width: 100%;
+  padding: 0;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+
+    @media (min-width: 768px) {
+      flex-basis: 21rem;
+      flex-shrink: 0;
+    }
+  }
+
+  &__card {
+    gap: 1.5rem;
+  }
+
+  &__title {
+    margin-block-start: 1rem;
+
+    @media only screen and (min-width: 768px) {
+      margin-block-start: 0;
+    }
+  }
 
   &__loading {
     min-height: 100vh;

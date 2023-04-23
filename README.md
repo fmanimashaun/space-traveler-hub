@@ -8,6 +8,10 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [📸 Screenshots](#screenshots)
+    - [Desktop](#desktop)
+    - [Tablet](#tablet)
+    - [Mobile](#mobile)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -29,10 +33,10 @@ This is a web application that allows users to view information about rockets, m
 ## Project Objectives <a name="project-objectives"></a>
 
 The objectives of this project are:
-- [ ] Create a web application using React and Redux.
-- [ ] Fetch data from SpaceX API endpoints and store them in Redux store.
-- [ ] Render UI components to display the data.
-- [ ] Allow users to reserve rockets and dragons, and join missions.
+- [x] Create a web application using React and Redux.
+- [x] Fetch data from SpaceX API endpoints and store them in Redux store.
+- [x] Render UI components to display the data.
+- [x] Allow users to reserve rockets and dragons, and join missions.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -65,6 +69,49 @@ The objectives of this project are:
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 > [Live Demo Link](https://edgardsoza.github.io/space-traveler-hub/)
+
+## 📷 Screenshots <a name="screenshots"></a>
+
+### Desktop <a name="desktop"></a>
+
+<p align="center">
+  <img width="500" src="screenshots/desktop-rocket.png">
+</P>
+
+<p align="center">
+  <img width="500" src="screenshots/desktop-mission.png">
+</P>
+
+<p align="center">
+  <img width="500" src="screenshots/desktop-profile.png">
+</P>
+
+### Tablet <a name="tablet"></a>
+
+<p align="center">
+  <img width="300" src="screenshots/tablet-rocket.png">
+</P>
+
+<p align="center">
+  <img width="300" src="screenshots/tablet-mission.png">
+</P>
+
+<p align="center">
+  <img width="300" src="screenshots/tablet-profile.png">
+</P>
+
+### Mobile <a name="mobile"></a>
+<p align="center">
+  <img width="200" src="screenshots/mobile-rocket.png">
+</P>
+
+<p align="center">
+  <img width="200" src="screenshots/mobile-mission.png">
+</P>
+
+<p align="center">
+  <img width="200" src="screenshots/mobile-profile.png">
+</P>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
